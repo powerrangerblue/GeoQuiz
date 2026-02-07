@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">GeoQuiz</string>
+
+    <!-- Quiz Activity Strings -->
+    <string name="true_button">TRUE</string>
+    <string name="false_button">FALSE</string>
+    <string name="next_button">Next</string>
+    <string name="prev_button">Previous</string>
+    <string name="cheat_button">Cheat!</string>
+    <string name="score_format">Score: %1$d/%2$d</string>
+
+    <!-- Philippine Geography Questions -->
+    <string name="question_luzon">Luzon is the largest island in the Philippines.</string>
+    <string name="question_visayas">The Visayas is composed of multiple islands.</string>
+    <string name="question_mindanao">Mindanao is the smallest major island in the Philippines.</string>
+    <string name="question_manila">Manila is the capital of the Philippines.</string>
+    <string name="question_davao">Davao is located in Mindanao.</string>
+    <string name="question_palawan">Palawan is known for its biodiversity.</string>
+    <string name="question_boracay">Boracay Island is the largest island in the Philippines.</string>
+    <string name="question_cebu">Cebu is one of the major cities in the Visayas.</string>
+
+    <!-- Toast Messages -->
+    <string name="correct_toast">Correct!</string>
+    <string name="incorrect_toast">Incorrect!</string>
+    <string name="judgment_toast_cheater">You cheated and can\'t get the point</string>
+    <string name="already_answered_toast">Question already answered. Move to the next question.</string>
+    <string name="final_score_message">Final Score: %1$d/%2$d</string>
+
+    <!-- Cheat Activity Strings -->
+    <string name="cheat_activity_title">Reveal the Answer</string>
+    <string name="warning_text">Are you sure you want to see the answer?</string>
+    <string name="show_answer_button">Show Answer</string>
+    <string name="answer_placeholder">?</string>
+    <string name="answer_label">The answer is:</string>
+</resources>
