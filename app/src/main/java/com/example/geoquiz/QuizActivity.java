@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,18 +25,17 @@ public class QuizActivity extends AppCompatActivity {
 
     private Button mTrueButton;
     private Button mFalseButton;
-    private Button mNextButton;
-    private Button mPrevButton;
+    private ImageButton mNextButton;
+    private ImageButton mPrevButton;
     private Button mCheatButton;
     private TextView mQuestionTextView;
-    private TextView mScoreTextView;
 
     private Question[] mQuestionBank = new Question[] {
             new Question(R.string.question_luzon, true),
             new Question(R.string.question_visayas, true),
             new Question(R.string.question_mindanao, false),
             new Question(R.string.question_manila, true),
-            new Question(R.string.question_davao, true),
+            new Question(R.string.question_davao, false),
             new Question(R.string.question_palawan, true),
             new Question(R.string.question_boracay, false),
             new Question(R.string.question_cebu, true),
@@ -69,7 +69,6 @@ public class QuizActivity extends AppCompatActivity {
 
         // Initialize UI views
         mQuestionTextView = findViewById(R.id.question_text_view);
-        mScoreTextView = findViewById(R.id.score_text_view);
         mTrueButton = findViewById(R.id.true_button);
         mFalseButton = findViewById(R.id.false_button);
         mNextButton = findViewById(R.id.next_button);
@@ -82,6 +81,7 @@ public class QuizActivity extends AppCompatActivity {
         mNextButton.setOnClickListener(v -> nextQuestion());
         mPrevButton.setOnClickListener(v -> prevQuestion());
         mCheatButton.setOnClickListener(v -> cheat());
+        mQuestionTextView.setOnClickListener(v -> nextQuestion());
 
         updateQuestion();
     }
@@ -155,7 +155,6 @@ public class QuizActivity extends AppCompatActivity {
 
         Question question = mQuestionBank[mCurrentIndex];
         mQuestionTextView.setText(question.getTextResId());
-        updateScore();
 
         // Disable answer buttons if question was already answered
         boolean isAnswered = mAnsweredQuestions[mCurrentIndex];
@@ -166,12 +165,7 @@ public class QuizActivity extends AppCompatActivity {
         mCheatButton.setEnabled(!mCheatedQuestions[mCurrentIndex]);
     }
 
-    /**
-     * Updates the score display.
-     */
-    private void updateScore() {
-        mScoreTextView.setText(getString(R.string.score_format, mScore, mQuestionBank.length));
-    }
+
 
     /**
      * Checks if the user's answer is correct.
@@ -218,8 +212,15 @@ public class QuizActivity extends AppCompatActivity {
 
     /**
      * Advances to the next question.
+     * If the current question hasn't been answered, it will be marked as skipped
+     * and cannot be answered later.
      */
     private void nextQuestion() {
+        // Mark current question as answered if it hasn't been answered yet (prevent answering later)
+        if (mCurrentIndex < mQuestionBank.length && !mAnsweredQuestions[mCurrentIndex]) {
+            mAnsweredQuestions[mCurrentIndex] = true;
+            Log.d(TAG, "Question at index " + mCurrentIndex + " skipped and locked");
+        }
         mCurrentIndex++;
         updateQuestion();
     }

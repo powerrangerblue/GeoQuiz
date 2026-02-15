@@ -10,11 +10,11 @@
     <string name="score_format">Score: %1$d/%2$d</string>
 
     <!-- Philippine Geography Questions -->
-    <string name="question_luzon">Luzon is the largest island in the Philippines.</string>
-    <string name="question_visayas">The Visayas is composed of multiple islands.</string>
-    <string name="question_mindanao">Mindanao is the smallest major island in the Philippines.</string>
-    <string name="question_manila">Manila is the capital of the Philippines.</string>
-    <string name="question_davao">Davao is located in Mindanao.</string>
+    <string name="question_luzon">The Philippines is an archipelago composed of more than 7,000 islands.</string>
+    <string name="question_visayas">Mount Apo, located in Mindanao, is the highest mountain in the Philippines.</string>
+    <string name="question_mindanao">The capital city of the Philippines is Quezon City.</string>
+    <string name="question_manila">The Pasig River connects Laguna de Bay to Manila Bay.</string>
+    <string name="question_davao">Palawan is located in the Visayas region.</string>
     <string name="question_palawan">Palawan is known for its biodiversity.</string>
     <string name="question_boracay">Boracay Island is the largest island in the Philippines.</string>
     <string name="question_cebu">Cebu is one of the major cities in the Visayas.</string>

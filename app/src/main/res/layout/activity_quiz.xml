@@ -5,32 +5,6 @@
     android:orientation="vertical"
     android:background="@android:color/white">
 
-    <!-- Header Section with Score -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="24dp"
-        android:background="@android:color/darker_gray">
-
-        <TextView
-            android:id="@+id/score_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/score_format"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="@android:color/white"
-            android:gravity="center" />
-
-    </LinearLayout>
-
-    <!-- Divider -->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray" />
-
     <!-- Main Content Area -->
     <LinearLayout
         android:layout_width="match_parent"
@@ -101,24 +75,24 @@
             android:layout_marginBottom="16dp"
             android:baselineAligned="false">
 
-            <Button
+            <ImageButton
                 android:id="@+id/prev_button"
-                android:layout_width="120dp"
+                android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_marginEnd="12dp"
-                android:text="@string/prev_button"
-                android:textSize="16sp"
-                android:textColor="@android:color/white"
-                android:background="@android:drawable/btn_default" />
+                android:contentDescription="@string/prev_button"
+                android:src="@drawable/ic_chevron_left"
+                android:scaleType="centerInside"
+                android:background="?attr/selectableItemBackgroundBorderless" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/next_button"
-                android:layout_width="120dp"
+                android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:text="@string/next_button"
-                android:textSize="16sp"
-                android:textColor="@android:color/white"
-                android:background="@android:drawable/btn_default" />
+                android:contentDescription="@string/next_button"
+                android:src="@drawable/ic_chevron_right"
+                android:scaleType="centerInside"
+                android:background="?attr/selectableItemBackgroundBorderless" />
 
         </LinearLayout>
 
